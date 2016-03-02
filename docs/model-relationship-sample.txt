@@ -1,0 +1,28 @@
+aht-mba:slc-wasabi husni$ slc loopback:relation
+? Select the model to create the relationship from: WasabiUser
+? Relation type: has many
+? Choose a model to create a relationship with: Course
+? Enter the property name for the relation: attendCourses
+? Optionally enter a custom foreign key: attendeeId
+? Require a through model? Yes
+? Choose a through model: CourseAttendee
+aht-mba:slc-wasabi husni$ slc loopback:relation
+? Select the model to create the relationship from: Course
+? Relation type: has many
+? Choose a model to create a relationship with: WasabiUser
+? Enter the property name for the relation: attendees
+? Optionally enter a custom foreign key: courseId
+? Require a through model? Yes
+? Choose a through model: CourseAttendee
+aht-mba:slc-wasabi husni$ slc loopback:relation
+? Select the model to create the relationship from: CourseAttendee
+? Relation type: belongs to
+? Choose a model to create a relationship with: WasabiUser
+? Enter the property name for the relation: attendee
+? Optionally enter a custom foreign key: wasabiUserId
+aht-mba:slc-wasabi husni$ slc loopback:relation
+? Select the model to create the relationship from: CourseAttendee
+? Relation type: belongs to
+? Choose a model to create a relationship with: Course
+? Enter the property name for the relation: course
+? Optionally enter a custom foreign key: courseId

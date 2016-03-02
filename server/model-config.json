@@ -1,0 +1,78 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ]
+  },
+  "User": {
+    "dataSource": "mongo",
+    "public": false
+  },
+  "AccessToken": {
+    "dataSource": "mongo",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "mongo",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "mongo",
+    "public": false
+  },
+  "Role": {
+    "dataSource": "mongo",
+    "public": false
+  },
+  "user": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "Slide": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "SlideDeck": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "SlideShow": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "Class": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "ChatMessage": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "ActivityLog": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "ClassAttendee": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "ClassLecturer": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "Course": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "CourseAttendee": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "CourseLecturer": {
+    "dataSource": "mongo",
+    "public": true
+  }
+}

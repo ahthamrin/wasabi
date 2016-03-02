@@ -1,0 +1,26 @@
+<div class="grid-block shrink for-landscape-vertical">
+	<!-- lecturer video -->
+	<div id="remote-video" class="grid-block shrink for-portrait-size-6 for-landscape-size-12 align-center">
+		<div class="card">
+			<video ng-click="showRemoteVideoDialog()" autoplay class="rtc"></video>
+		</div>
+		<div class="align-center bounded modal-overlay">
+			<button ng-click="okBtnRemoteVideoDialog()" class="primary button small"><span class="fa fa-phone"></span></button>
+			<button ng-click="cancelBtnRemoteVideoDialog()" class="secondary button small"><span class="fa fa-phone fa-rotate-135"></span></button>
+		</div>
+	</div>
+
+	<div class="grid-block for-landscape-up-3 for-portrait-up-4" id="attendee-vidcap-section">
+  	<!-- self video -->
+  	<div class="grid-content">
+		<div class="card">
+			<video id="local-video" autoplay muted class="rtc"></video>
+			<canvas style="display:none;" class="rtc"></canvas>
+		</div>
+		</div>
+	  <!-- other videos/images -->
+	  <!--div class="red card" ng-repeat="attn in attendeeVideoCaptures">
+	    <img ng-src="{{attn.jpg}}" class="rtc">
+	  </div-->
+	</div>
+</div>

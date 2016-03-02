@@ -1,0 +1,35 @@
+{
+  "name": "ClassAttendee",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "onlineTime": {
+      "type": [
+        "date"
+      ]
+    },
+    "offlineTime": {
+      "type": [
+        "date"
+      ]
+    }
+  },
+  "validations": [],
+  "relations": {
+    "attendee": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": "userId"
+    },
+    "class": {
+      "type": "belongsTo",
+      "model": "Class",
+      "foreignKey": "classId"
+    }
+  },
+  "acls": [],
+  "methods": []
+}

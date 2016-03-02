@@ -1,0 +1,58 @@
+---
+name: class-live-attendee
+url: /live-attendee/:cid/:did
+controller: ClassLiveController
+---
+<div class="grid-frame vertical">
+
+
+<div class="grid-block vertical for-landscape-horizontal">
+<div slideshow-container class="grid-block vertical for-portrait-order-1 for-landscape-order-2 for-landscape-size-9" >
+  <div class="grid-block shrink"><div id="slideshow-indicator" style="{{slideshowIndicatorPct}}"></div>
+  </div>
+	<!--ks-swiper-container swiper="swiper">
+    <ks-swiper-slide class="swiper-slide" ng-repeat="slide in slides">
+      <img ng-src="{{slide.filepath}}">
+    </ks-swiper-slide>
+  </ks-swiper-container-->
+<img id="slideshow-current" ng-src="/slide-decks/{{slideFile}}" alt="slide" ng-bind="slideFile"  ng-click="tap($event)"/>
+  <div class="grid-block shrink stack-20 slideshow-command vertical">
+    <div class="grid-block shrink align-right">
+  	<ul class="button-group">
+  	<li><a ng-click="first()" ng-show="showCtrlButton" class="hollow button"><span class="fa fa-fast-backward"></span></a></li>
+  	<li><a ng-click="prev()" ng-show="showCtrlButton" class="hollow button"><span class="fa fa-backward"></span></a></li>
+  	<li><a ng-click="next()" ng-show="showCtrlButton" class="hollow button"><span class="fa fa-forward"></span></a></li>
+  	<li><a ng-click="last()" ng-show="showCtrlButton" class="hollow button"><span class="fa fa-fast-forward"></span></a></li>
+    <li><a ng-click="toggleCtrlButton()" class="hollow button"><span class="fa fa-bars"></span></a></li>
+  	<li><a ng-click="toggleFullScreen()" class="hollow button"><span class="fa fa-expand"></span></a></li>
+  	</ul>
+    </div>
+  </div>
+</div><!--slide-->
+
+<div class="grid-block vertical for-portrait-order-2 for-landscape-order-1 for-landscape-size-3">
+	<!-- video -->
+  <video-attendee></video-attendee>
+  <!-- chat -->
+  <div chat-input class="grid-block vertical">
+    <!-- chat input -->
+    <div class="grid-block shrink small-12">
+    <span class="inline-label small-12">
+    <input ng-model="chatInputText" type="text" placeholder="comment/question">
+    <span class="button margin-0">Send</span>
+    </span>
+    </div>
+    <!--chat text-->
+    <div class="grid-content">
+      <div ng-repeat="msg in chatMessages">
+        <span title="{{msg.timestamp}}" class="chat sender" ng-bind="msg.from"></span>
+        <span class="chat text" title="{{msg.slideNo}}" ng-bind="msg.text"></span>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+</div> <!--frame-->

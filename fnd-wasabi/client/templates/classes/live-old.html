@@ -1,0 +1,106 @@
+---
+name: class-live-old
+url: /live-old/:cid/:did
+controller: ClassLiveController
+---
+<div class="grid-frame vertical">
+<div class="grid-block vertical for-landscape-horizontal">
+<div slideshow-container class="grid-block vertical for-portrait-order-1 for-landscape-order-2 for-landscape-size-9">
+	<img id="slideshow-current" ng-src="/slide-decks/{{slideFile}}" alt="slide" ng-bind="slideFile">
+<!--div class="grid-block shrink stack-10 slideshow-label">
+<video-send io="liveIO" w="windowWidth" h="windowHeight" my-id="myId" remote-id="remoteId" remote-id-changed="remoteIdChanged" lecturer="lecturer" camera="startCamera" remote-stream="remoteStream"></video-send>
+</div-->
+	
+<div class="grid-block shrink stack-20 slideshow-command">
+	<ul class="button-group">
+	<li><a ng-click="first()" ng-show="showCtrlButton" class="hollow button">First</a></li>
+	<li><a ng-click="prev()" ng-show="showCtrlButton" class="hollow button">Prev</a></li>
+	<li><a ng-click="next()" ng-show="showCtrlButton" class="hollow button">Next</a></li>
+	<li><a ng-click="last()" ng-show="showCtrlButton" class="hollow button">Last</a></li>
+	<li><a ng-click="toggleCtrlButton()" class="hollow button">Ctrl</a></li>
+	</ul>
+</div>
+
+</div><!--slide-->
+<div class="grid-block vertical for-portrait-order-2 for-landscape-order-1 for-landscape-size-3">
+	<!-- video -->
+	<div class="grid-block shrink for-landscape-vertical">
+		<!-- lecturer video -->
+	<video-receive stream="remoteStream"></video-receive>
+	<div class="grid-block for-landscape-up-3 for-portrait-up-5">
+		<video-send>
+	  	<!-- self video -->
+		</video-send>
+    <!-- other videos -->
+    <div class="red card" ng-repeat="attn in attendeeVideos">
+      <img ng-src="{{attn.jpg}}" class="rtc">
+    </div>
+    <!--div class="dark card ">
+    <img src="http://placekitten.com/g/400/200">
+    </div>
+    <div class="dark card ">
+    <img src="http://placekitten.com/g/400/200">
+    </div>
+    <div class="dark card ">
+    <img src="http://placekitten.com/g/400/200">
+    </div>
+    <div class="dark card ">
+    <img src="http://placekitten.com/g/400/200">
+    </div>
+    <div class="dark card ">
+    <img src="http://placekitten.com/g/400/200">
+    </div>
+    <div class="dark card ">
+    <img src="http://placekitten.com/g/400/200">
+    </div-->
+  </div>
+	</div>
+  <div class="grid-block vertical"><!--chat-->
+    <div ng-click="toggleChatInput()" class="grid-block vertical"><!--chat text-->
+       <p>
+      Cras mattis consectetur purus sit amet fermentum. Nullam quis risus eget urna mollis ornare vel eu leo. Aenean lacinia bibendum nulla sed consectetur.
+      </p>
+      <p>
+      Cras mattis consectetur purus sit amet fermentum. Nullam quis risus eget urna mollis ornare vel eu leo. Aenean lacinia bibendum nulla sed consectetur.
+      </p>
+      <p>
+      Cras mattis consectetur purus sit amet fermentum. Nullam quis risus eget urna mollis ornare vel eu leo. Aenean lacinia bibendum nulla sed consectetur.
+      </p>
+    </div>
+
+</div>
+</div>
+ </div>
+    <div ng-show="showChatInput" class="grid-block shrink small-12">
+		  <span class="inline-label small-12">
+		  <input type="text" placeholder="comment/question">
+		  <a href="#" class="button">Send</a>
+		  </span>
+    </div>
+
+<!--div class="grid-block shrink stack-20 slideshow-command">
+  <div ng-show="showCtrlButton" class="grid-content">
+  <span class="inline-label">
+  <input type="text" placeholder="comment/question">
+  <a href="#" class="button">Send</a>
+  </span>
+  </div>
+	<ul ng-show="showCtrlButton" class="button-group">
+	<li><a ng-click="first()" class="hollow button">First</a></li>
+	<li><a ng-click="prev()" class="hollow button">Prev</a></li>
+	<li><a ng-click="next()" class="hollow button">Next</a></li>
+	<li><a ng-click="last()" class="hollow button">Last</a></li>
+	</ul>
+	<a ng-click="toggleCtrlButton()" class="button">Ctrl</a>
+</div-->
+</div> <!--frame-->
+
+	<!--div class="grid-block shrink align-center stack-20">
+	<ul class="button-group">
+	<li><a ng-click="first()" class="hollow button small">First</a></li>
+	<li><a ng-click="prev()" class="hollow button small">Prev</a></li>
+	<li><a ng-click="next()" class="hollow button small">Next</a></li>
+	<li><a ng-click="last()" class="hollow button small">Last</a></li>
+	</ul>
+	</div-->
+

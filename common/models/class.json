@@ -1,0 +1,58 @@
+{
+  "name": "Class",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    },
+    "start": {
+      "type": "date",
+      "required": true
+    },
+    "finish": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "chatMessages": {
+      "type": "hasMany",
+      "model": "ChatMessage",
+      "foreignKey": "classId"
+    },
+    "activityLogs": {
+      "type": "hasMany",
+      "model": "ActivityLog",
+      "foreignKey": "classId"
+    },
+    "slideDecks": {
+      "type": "hasMany",
+      "model": "SlideDeck",
+      "foreignKey": "classId",
+      "through": "SlideShow"
+    },
+    "attendees": {
+      "type": "hasMany",
+      "model": "user",
+      "foreignKey": "classId",
+      "through": "ClassAttendee"
+    },
+    "lecturers": {
+      "type": "hasMany",
+      "model": "user",
+      "foreignKey": "classId",
+      "through": "ClassLecturer"
+    }
+  },
+  "acls": [],
+  "methods": []
+}

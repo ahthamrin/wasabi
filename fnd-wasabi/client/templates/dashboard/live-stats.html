@@ -1,0 +1,54 @@
+---
+name: dash-live-stats
+url: /dash/:cid/:did
+controller: DashboardLiveStatsController
+---
+
+<div class="grid-block vertical">
+    <div class="grid-content shrink center">
+      <h3 class="title">STATS</h3>
+    </div>
+<div class="grid-block">
+  <div class="grid-block vertical small-9">
+    <div class="grid-content shrink">
+      <!-- stats -->
+      <div>Running time: <span ng-bind="stats.runtime"></span></div>
+      <div>Clients: <span ng-bind="stats.clients"></span></div>
+      <div>Participants: <span ng-bind="stats.participants"></span></div>
+      <div>Chat messages: <span ng-bind="stats.chatMsgs"></span></div>
+      <div>Slide changes: <span ng-bind="stats.slideChanges"></span></div>
+      <div>Slide taps: <span ng-bind="stats.slideTaps"></span></div>
+      <div>Engagement level: <span ng-bind="stats.engagement"></span></div>
+    </div>
+    <div class="grid-content">
+      <!-- graph -->
+      <nvd3 options="graph.options" data="graph.data" api="graph.api"></nvd3>
+    </div>
+    <div class="grid-block">
+      <!-- chat -->
+      <div class="grid-content">
+        <div ng-repeat="msg in chatMessages">
+          <span title="{{msg.timestamp}}" class="chat sender" ng-bind="msg.from"></span>
+          <span class="chat text" title="{{msg.slideNo}}" ng-bind="msg.text"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="grid-block small-3 vertical shrink">
+      <!-- slide data -->
+      <div stats-slide resize class="grid-block vertical" ng-repeat="sd in slides">
+        <div class="grid-block vertical shrink">
+          <div class="grid-content shrink stack-20-fixed vertical">
+            <canvas/>
+          </div>
+          <img class="grid-content" ng-src="{{sd.filepath}}"/>
+        </div>
+        <div class="grid-content vertical shrink">
+          <span>Curr:</span> <span ng-bind="sd.currentViews"/></span>
+          <span>View:</span> <span ng-bind="sd.totalViews"/></span>
+          <span>Tap:</span> <span ng-bind="sd.totalTaps"/></span>
+        </div>
+      </div>
+  </div>
+</div>
+</div>

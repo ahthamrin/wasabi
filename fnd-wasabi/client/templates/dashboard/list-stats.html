@@ -1,0 +1,23 @@
+---
+name: dash-list
+url: /dash
+controller: DashboardListController
+---
+
+<divclass="grid-container">
+	<div class="grid-block">
+		<div ng-click="dash(cl)" class="grid-content" ng-repeat="cl in classLive">
+			<h3 ng-bind="cl.title"></h3>
+			<p ng-bind="cl.description"></p>
+			<p>Start: <span ng-bind="cl.start"></span>; Finish: <span ng-bind="cl.finish"></span></p>
+		</div>
+		<div class="grid-content" ng-repeat="cl in courses">
+			<h3 ng-bind="cl.title"></h3>
+			<p ng-bind="cl.description"></p>
+			<p>Start: <span ng-bind="cl.start"></span>; Finish: <span ng-bind="cl.finish"></span></p>
+		</div>
+	</div>
+	<div class="grid-block">
+		<button ng-click="logout()">Logout</button>
+	</div>
+</div>

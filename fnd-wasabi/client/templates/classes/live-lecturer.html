@@ -1,0 +1,57 @@
+---
+name: class-live-lecture
+url: /live-lecture/:cid/:did
+controller: ClassLiveController
+---
+<div class="grid-frame vertical">
+<div class="grid-block vertical for-landscape-horizontal">
+<div slideshow-container class="grid-block vertical for-portrait-order-1 for-landscape-order-2 for-landscape-size-9">
+	<img id="slideshow-current" ng-src="/slide-decks/{{slideFile}}" alt="slide" ng-bind="slideFile">	
+  <div class="grid-block shrink stack-20 slideshow-command">
+  	<ul class="button-group">
+  	<li><a ng-click="first()" ng-show="showCtrlButton" class="hollow button">First</a></li>
+  	<li><a ng-click="prev()" ng-show="showCtrlButton" class="hollow button">Prev</a></li>
+  	<li><a ng-click="next()" ng-show="showCtrlButton" class="hollow button">Next</a></li>
+  	<li><a ng-click="last()" ng-show="showCtrlButton" class="hollow button">Last</a></li>
+  	<li><a ng-click="toggleCtrlButton()" class="hollow button">Ctrl</a></li>
+  	</ul>
+  </div>
+</div><!--slide-->
+
+<div class="grid-block vertical for-portrait-order-2 for-landscape-order-1 for-landscape-size-3">
+	<!-- video -->
+  <video-lecturer></video-lecturer>
+  <!-- chat -->
+  <div chat-input ng-click="toggleChatInput()" class="grid-block vertical">
+    <!--div class="grid-block vertical"><!--chat text-->
+    <div class="grid-content">
+      <div ng-repeat="msg in chatMessages">
+        <div title="msg.timestamp" class="chat sender" ng-bind="msg.from"></div>
+        <div class="chat text" title="msg.slideNo" ng-bind="msg.text"></div>
+      </div>
+      <!--div>Cras mattis consectetur purus sit amet fermentum. Nullam quis risus eget urna mollis ornare vel eu leo. Aenean lacinia bibendum nulla sed consectetur.</div>
+      <div>Cras mattis consectetur purus sit amet fermentum. Nullam quis risus eget urna mollis ornare vel eu leo. Aenean lacinia bibendum nulla sed consectetur.</div>
+      <div>Cras mattis consectetur purus sit amet fermentum. Nullam quis risus eget urna mollis ornare vel eu leo. Aenean lacinia bibendum nulla sed consectetur.</div>
+      <div>Cras mattis consectetur purus sit amet fermentum. Nullam quis risus eget urna mollis ornare vel eu leo. Aenean lacinia bibendum nulla sed consectetur.</div>
+      <div>Cras mattis consectetur purus sit amet fermentum. Nullam quis risus eget urna mollis ornare vel eu leo. Aenean lacinia bibendum nulla sed consectetur.</div>
+      <div>Cras mattis consectetur purus sit amet fermentum. Nullam quis risus eget urna mollis ornare vel eu leo. Aenean lacinia bibendum nulla sed consectetur.</div>
+      <div>Cras mattis consectetur purus sit amet fermentum. Nullam quis risus eget urna mollis ornare vel eu leo. Aenean lacinia bibendum nulla sed consectetur.</div>
+      <div>Cras mattis consectetur purus sit amet fermentum. Nullam quis risus eget urna mollis ornare vel eu leo. Aenean lacinia bibendum nulla sed consectetur.</div>
+      <div>Cras mattis consectetur purus sit amet fermentum. Nullam quis risus eget urna mollis ornare vel eu leo. Aenean lacinia bibendum nulla sed consectetur.</div>
+      <div>Cras mattis consectetur purus sit amet fermentum. Nullam quis risus eget urna mollis ornare vel eu leo. Aenean lacinia bibendum nulla sed consectetur.</div>
+      <div>Cras mattis consectetur purus sit amet fermentum. Nullam quis risus eget urna mollis ornare vel eu leo. Aenean lacinia bibendum nulla sed consectetur.</div>
+      <div>Cras mattis consectetur purus sit amet fermentum. Nullam quis risus eget urna mollis ornare vel eu leo. Aenean lacinia bibendum nulla sed consectetur.</div-->
+    </div>
+    <!--/div-->
+  </div>
+</div>
+</div>
+
+<div ng-show="showChatInput" class="grid-block shrink small-12">
+  <span class="inline-label small-12">
+  <input ng-model="chatInputText" type="text" placeholder="comment/question">
+  <span ng-click="sendChatMessage()" class="button">Send</span>
+  </span>
+</div>
+
+</div> <!--frame-->

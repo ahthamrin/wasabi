@@ -1,0 +1,45 @@
+{
+  "name": "user",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {},
+  "validations": [],
+  "relations": {
+    "attendCourses": {
+      "type": "hasMany",
+      "model": "Course",
+      "foreignKey": "userId",
+      "through": "CourseAttendee"
+    },
+    "attendClasses": {
+      "type": "hasMany",
+      "model": "Class",
+      "foreignKey": "userId",
+      "through": "ClassAttendee"
+    },
+    "lectureCourses": {
+      "type": "hasMany",
+      "model": "Course",
+      "foreignKey": "userId",
+      "through": "CourseLecturer"
+    },
+    "lectureClasses": {
+      "type": "hasMany",
+      "model": "Class",
+      "foreignKey": "userId",
+      "through": "ClassLecturer"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": []
+}

@@ -1,0 +1,47 @@
+{
+  "name": "Course",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "start": {
+      "type": "date",
+      "required": true
+    },
+    "finish": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "classes": {
+      "type": "hasMany",
+      "model": "Class",
+      "foreignKey": "courseId"
+    },
+    "attendees": {
+      "type": "hasMany",
+      "model": "user",
+      "foreignKey": "courseId",
+      "through": "CourseAttendee"
+    },
+    "lecturers": {
+      "type": "hasMany",
+      "model": "user",
+      "foreignKey": "courseId",
+      "through": "CourseLecturer"
+    }
+  },
+  "acls": [],
+  "methods": []
+}

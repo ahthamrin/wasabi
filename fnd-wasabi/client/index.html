@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en" ng-app="wasabi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <title>WASABI App</title>
+    <link href="/assets/css/app.css" rel="stylesheet" type="text/css">
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/assets/js/foundation.js"></script>
+    <script src="/assets/js/templates.js"></script>
+    <script src="/assets/js/routes.js"></script>
+    <script src="/assets/js/app.js"></script>
+  </head>
+  <body resize ui-view>
+      <!--div class="grid-content shrink" style="padding: 0;" ng-controller="TopMenuController" ng-show="authenticated">
+        <ul class="primary condense menu-bar">
+          <li><a><strong>WASABI</strong></a></li>
+          <li><a ng-click="logout()"><strong>Logout</strong></a></li>
+        </ul>
+      </div-->
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<div class="grid-block shrink">
+<div id="video-section" class="grid-block for-landscape-vertical for-landscape-up-1 for-portrait-up-3">
+
+	<!-- lecturer video -->
+	<div class="grid-block align-center">
+		<div class="card">
+			<video id="local-video" ng-src="{{localVideo.src}}" autoplay muted class="rtc"></video>
+			<canvas style="display:none;" class="rtc"></canvas>
+		</div>
+	</div>
+
+	<div id="attendee-vidcap-section" class="grid-block for-landscape-up-3 for-portrait-up-3">
+	  <!-- other images -->
+	  <!--div class="grid-block" ng-repeat="attn in attendeeVideoCaptures">
+		  <div class="card {{attn.rtcInitOffer ? 'alert' : ''}}">
+		    <img ng-src="{{attn.jpg}}" class="rtc">
+		  </div>
+			<div overlay="false" overlay-close="false" class="align-center bounded modal-overlay {{attn.rtcInitOffer ? 'is-active' : ''}}">
+			<a ng-click="rtcRequestOffer(attn.userId)" class="alert button small">Y</a>
+			<a ng-click="rtcRejectOffer(attn.userId)" class="secondary button small">N</a>
+			</div>
+	 	</div-->
+	</div>
+
+	<!-- other videos
+	<div class="grid-block" ng-show="remoteVideos[0].src">
+		<div class="card">
+			<video class="remote-video rtc" ng-src="{{remoteVideos[0].src}}" autoplay title="remoteVideos[0].userId"></video>
+		</div>
+	</div>
+
+	<div class="grid-block" ng-show="remoteVideos[1].src">
+		<div class="card">
+			<video class="remote-video rtc" ng-src="{{remoteVideos[1].src}}" autoplay title="remoteVideos[1].userId"></video>
+		</div>
+	</div>
+	
+	<div class="grid-block" ng-show="remoteVideos[2].src">
+		<div class="card">
+			<video class="remote-video rtc" ng-src="{{remoteVideos[2].src}}" autoplay title="remoteVideos[2].userId"></video>
+		</div>
+	</div>
+	-->
+</div>
+</div>

@@ -1,0 +1,24 @@
+---
+name: class-live-lecture-x
+url: /live-lecture-x/:cid/:did
+controller: ClassLiveController
+---
+
+<div class="vertical grid-frame slideshow-slide">
+	<img id="slideshow-current" ng-src="/slide-decks/{{slideFile}}" alt="slide" ng-bind="slideFile">
+</div>
+<div class="grid-frame slideshow-label">
+<old-video-send io="liveIO" w="windowWidth" h="windowHeight" my-id="myId" remote-id="remoteId" remote-id-changed="remoteIdChanged" lecturer="lecturer" camera="startCamera"></old-video-send>
+<!--video-send io="rtcIO" w="{{windowWidth}}" h="{{windowHeight}}"></video-send-->
+<video id="remote-id" autoplay></video>
+</div>
+<div ng-show="lecturer" class="vertical grid-frame slideshow-command">
+<div class="grid-frame align-center">
+<ul class="button-group">
+<li><a ng-click="first()" class="hollow button">First</a></li>
+<li><a ng-click="prev()" class="hollow button">Prev</a></li>
+<li><a ng-click="next()" class="hollow button">Next</a></li>
+<li><a ng-click="last()" class="hollow button">Last</a></li>
+</ul>
+</div>
+</div>

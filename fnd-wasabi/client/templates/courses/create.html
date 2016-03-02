@@ -1,0 +1,86 @@
+---
+name: course-create
+url: /course/create
+controller: CourseCreateController
+---
+
+<div class="grid-block vertical">
+  <div class="grid-content small-12">
+	<form>
+  	<label>
+  		Create A New Course
+  	</label>
+  	<!--div class="grid-block"-->
+  	<div class="grid-content small-12">
+		<label>
+			Title
+			<input type="text" ng-model="title" placeholder="Course Title">
+		</label>
+		<label>
+			Description
+			<input type="text" ng-model="description" placeholder="Description">
+		</label>
+    <label>
+      Lecturers
+      <input type="text" class="user-name" ng-model="lecturers" placeholder="Lecturers">
+    </label>
+  	</div>
+    <label>
+      Class Information and Schedule
+    </label>
+    <div class="grid-block" ng-repeat="thisclass in classes">
+      <div class="grid-content small-12">
+        Class #{{$index+1}}
+        (<span class="fa fa-trash" ng-click="delete(thisclass, $index)">Delete</span>)
+      </div>
+      <div class="grid-content small-12">
+      <label>
+        Title
+        <input type="text" ng-model="thisclass.title" placeholder="Class Title">
+      </label>
+      <label>
+        Description
+        <input type="text" ng-model="thisclass.description" placeholder="Description">
+      </label>
+      <label>
+        Lecturers
+        <!--user-name model-class="thisclass"><input type="text" ng-model="thisclass.lecturers" placeholder="Lecturers"></user-name-->
+        <user-names ng-model="thisclass.lecturers" place-holder="Lecturers"></user-names>
+      </label>
+      </div>
+      <div class="grid-content small-12 medium-4">
+        <label>
+          Start
+          <quick-datepicker ng-model="thisclass.start"></quick-datepicker>
+        </label>
+      </div>
+      <div class="grid-content small-12 medium-4">
+        <label>
+          Finish
+          <quick-datepicker ng-model="thisclass.finish"></quick-datepicker>
+        </label>
+      </div>
+    </div>
+    <div class="grid-content small-12">
+      <button ng-click="addClass()">Add a class</button>
+    </div>
+  	<!--div class="grid-content small-12 medium-4">
+  		<label>
+  			Start
+        <quick-datepicker ng-model="startdate"></quick-datepicker>
+  		</label>
+  	</div>
+  	<div class="grid-content small-12 medium-4">
+  		<label>
+  			Finish
+        <quick-datepicker ng-model="finishdate"></quick-datepicker>
+  		</label>
+  	</div-->
+  <!--/div-->
+	</form>
+  <div class="grid-block shrink small-12">
+    <button ng-click="create()">Create a Course</button>
+    <button ng-click="logout()">Logout</button>
+  </div>
+  </div>
+</div>
