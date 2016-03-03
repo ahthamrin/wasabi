@@ -76,7 +76,9 @@ module.exports = function mountSocketIO(server) {
           socket.liveClass.primary = false;
           socket.emit('joined-secondary',{userId: msg.userId, lecturer: msg.lecturer, classId: msg.classId});
         }
-        socket.join(msg.classId);
+        socket.join(msg.classId, function(err) {
+          console.log('socket cannot join room', msg.classId, socket);
+        });
 
 
         // send current sockets to the newly joined socket
